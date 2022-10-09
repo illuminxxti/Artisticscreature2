@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistics creature</title>
+    <!--icons-->
+    <script src="https://kit.fontawesome.com/4cabaf49de.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr&family=Poppins&display=swap" rel="stylesheet">
+<!--cascading style sheet-->
+<style>
+
+:root
+{
+--white:white;
+--black:black;
+--clr:#4d61fc;
+--hov:#203aff;
+--border:#69668786;
+--text:#3b3663;
+--Mitr:'Mitr',sans-serif;
+--Poppins:'Poppins',sans-serif;
+}   
+*
+{
+  margin: 0;
+}
+body{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-height: 99vh;
+}
+.flip-card 
+{
+  background-color: transparent;
+  width: 21rem;
+  height: 31rem;
+  perspective: 1000px;
+}
+
+.flip-card-inner 
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card-front, .flip-card-back 
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front 
+{
+  background-color: var(--white);
+  color: black;
+  display: grid;
+  justify-content: center;
+}
+
+.flip-card-back
+{
+  transform: rotateY(180deg);
+  display: grid;
+  justify-items:center ;
+}
+.flip-card.active .flip-card-inner
+{
+  transform: rotateY(180deg);
+  
+}
+.flip-card.active .flip-card-front
+{
+  pointer-events: none;
+}
+.top
+{
+  padding-top:1.6em;
+  height: fit-content;
+  display: grid;
+  justify-items:center;
+  row-gap: .5em;
+}
+.input
+{
+  padding:none;
+  display: grid;
+  justify-items: center;
+  row-gap: .6em;
+}
+.input div
+{
+  padding-top:2.1em;
+  border-bottom: 1px solid var(--border);
+  width:fit-content;
+  display:flex;
+  align-items: center;
+  gap:.7em;
+  position: relative;
+}
+.input div i
+{
+  height: 15px;
+  width: 15px;
+  color: var(--border);
+}
+.input div label
+{
+  position: absolute;
+  bottom:2.8em;
+  font-size: .8em;
+  color:var(--border);
+  font-weight: 800;
+  font-family: var(--Mitr);
+}
+.input input,
+.input input:focus
+{
+  padding:.5em 0;
+  border:none;
+  width: 16em;
+  outline:none;
+  font-size: .9em;
+  font-family: var(--Poppins);
+}
+.createBtn
+{
+ height: fit-content;
+ padding: .8em 1.6em;
+ border:none;
+ background-color: var(--clr);
+ justify-self: end;
+ color:var(--white);
+ border-radius: 5px;
+}
+.createBtn:hover
+{
+  background-color: var(--hov);
+  cursor: pointer;
+}
+.footer
+{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.2em;
+  row-gap: .3em;
+}
+.socialMedia
+{
+  display: flex;
+  height: fit-content;
+  gap:1em;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<style>
+.top-back
+{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  row-gap: 1.6em;
+}
+.input-back
+{
+  display: grid;
+  padding-bottom: 1em;
+  row-gap: 1em;
+}
+.input-back div
+{
+  padding-top:2.1em;
+  border-bottom: 1px solid var(--border);
+  width:fit-content;
+  display:flex;
+  align-items: center;
+  gap:.7em;
+  position: relative;
+}
+.input-back input,
+.input-back input:focus
+{
+  padding:.5em 0;
+  border:none;
+  width: 16em;
+  outline:none;
+  font-size: .9em;
+  font-family: var(--Poppins);
+}
+.input-back div label
+{
+  position: absolute;
+  bottom:2.8em;
+  font-size: .8em;
+  color:var(--border);
+  font-weight: 800;
+  font-family: var(--Mitr);
+}
+.input-back div i
+{
+  color:var(--border);
+}
+.loginBtn
+{
+ height: fit-content;
+ padding: .8em 1.6em;
+ border:none;
+ background-color: var(--clr);
+ justify-self: end;
+ color:var(--white);
+ border-radius: 5px;
+}
+.loginBtn:hover
+{
+  background-color: var(--hov);
+  cursor: pointer;
+}
+.footer-back
+{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.1em;
+  row-gap: .8em;
+}
+@media screen and (max-width:576px){
+  .flip-card-inner{
+    box-shadow: 0 0 10px var(--clr);
+    border:1px solid var(--clr);
+
+  }
+}
+</style>
+</head>
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+           <div class="flip-card-front">
+              <div class="top">
+                <span>
+                  <i class="fa-solid fa-user-plus" style="color:var(--clr);font-size: 1.3em;"></i>
+                </span>
+                <h2 style="margin-bottom:0;color: var(--text);">Create account!</h2>
+              </div>
+              <div class="input">
+                <form action="" style="height:fit-content;">
+                  <div class="name" style="padding:0;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name"><i class="fa-sharp fa-solid fa-user"></i></div>
+                  <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                  <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" id="password"><i class="fa-sharp fa-solid fa-lock"></i></div>
+                </form>
+                <button class="createBtn">Create&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+              <div class="footer">
+                <h5 style="margin:0;height: fit-content; color: var(--text);">OR SIGN-UP USING</h5>
+                <div class="socialMedia">
+                  <a href=""><img src="https://img.icons8.com/color/28/000000/google-logo.png"/></a>
+                  <a href=""><img src="https://img.icons8.com/color/31/000000/facebook-new.png"/></a>
+                  <a href=""><img src="https://img.icons8.com/color/31/000000/twitter--v1.png"/></a>
+                </div>
+                <h5 style="margin:0;color: var(--text);">Already have an account?<a class="btn1" href="#" style="text-decoration:none;"> Login</a></h5>
+              </div>
+              </div>
+           <div class="flip-card-back">
+              <div class="top-back" style="padding-bottom:0;padding-top: 1.7em;height: fit-content;">
+                <span><i class="fa-solid fa-right-to-bracket" style="color:var(--clr);font-size:1.4em;"></i></span>
+                <h2 style="color:var(--text);">Welcome!</h2>
+              </div>
+              <div class="input-back">
+                <form action="" style="height:fit-content;">
+                <div class="email-back"><label for="email-back">Email</label><input type="email"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                <div class="password-back"><label for="password-back">Password</label><input type="password"><i class="fa-sharp fa-solid fa-lock"></i></div>
+              </form>
+              <aside style="display:flex;justify-content: space-between;height: fit-content;">
+                <a href="" style="text-decoration:none;display: flex;justify-content: flex-start;height: fit-content;font-family: var(--Mitr);font-size: .9em;">Forgot password?</a>
+                <button class="loginBtn">Login&nbsp;<i class="fa-solid fa-arrow-right"></i></button>
+              </aside>
+              </div>
+              <div class="footer-back">
+                <h5 style="color:var(--text);">OR LOGIN USING</h5>
+                <div class="socialMedia">
+                  <a href=""><img src="https://img.icons8.com/color/28/000000/google-logo.png"/></a>
+                  <a href=""><img src="https://img.icons8.com/color/31/000000/facebook-new.png"/></a>
+                  <a href=""><img src="https://img.icons8.com/color/31/000000/twitter--v1.png"/></a>
+                </div>
+                 <h5 style="color:var(--text);">Don't have an account?<a class="btn2" href="#" style="text-decoration:none;"> Signup</a></h5>
+              </div> 
+          </div>
+        </div>
+    </div>
+</body>
+<script  type="text/javascript">
+  let btn1 = document.querySelector('.btn1');
+  let btn2 = document.querySelector('.btn2');
+  let flipcard = document.querySelector('.flip-card');
+  btn1.onclick=()=>flipcard.classList.add('active');
+  btn2.onclick=()=>flipcard.classList.remove('active');
+  window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+     }
+</script>
+</html>
